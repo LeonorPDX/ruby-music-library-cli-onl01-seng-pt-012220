@@ -28,8 +28,8 @@ class Song
     @@all
   end
   
-  def self.new_from_filename(path)
-    data = path.delete_suffix('.mp3').split(" - ")
+  def self.new_from_filename(filename)
+    data = filename.delete_suffix('.mp3').split(" - ")
     title = data[1]
     artist = Artist.find_or_create_by_name(data[0])
     genre = Genre.find_or_create_by_name(data[2])
